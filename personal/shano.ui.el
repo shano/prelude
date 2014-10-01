@@ -1,4 +1,4 @@
-(global-flycheck-mode -1)
+;(global-flycheck-mode -1)
 (global-hl-line-mode -1)
 ;; (fringe-mode '(0 . 8)) ;; Right fringe only
 
@@ -36,6 +36,11 @@
 (setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
 (setq sr-speedbar-auto-refresh nil)
+
+(prelude-require-package 'sr-speedbar)
+(global-set-key (kbd "C-s") 'sr-speedbar-toggle)
+(custom-set-variables '(sr-speedbar-right-side nil))
+
 
 (prelude-require-package 'color-theme-solarized)
 (load-theme 'solarized-dark t)
