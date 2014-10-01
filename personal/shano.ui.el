@@ -1,4 +1,4 @@
-;(global-flycheck-mode -1)
+                                        ;(global-flycheck-mode -1)
 (global-hl-line-mode -1)
 ;; (fringe-mode '(0 . 8)) ;; Right fringe only
 
@@ -40,6 +40,20 @@
 (prelude-require-package 'sr-speedbar)
 (global-set-key (kbd "C-s") 'sr-speedbar-toggle)
 (custom-set-variables '(sr-speedbar-right-side nil))
+
+;;
+;; El-Screen(for tabs)
+;;
+(prelude-require-package 'elscreen)
+(elscreen-start)
+
+;; F9 creates a new elscreen, shift-F9 kills it
+(global-set-key (kbd "C-c t a b e") 'elscreen-create)
+(global-set-key (kbd "C-c t a b d") 'elscreen-kill)
+
+;; Windowskey+PgUP/PgDown switches between elscreens
+;(global-set-key (kbd "C-c n") 'elscreen-previous)
+;(global-set-key (kbd "C-n []") 'elscreen-next)
 
 
 (prelude-require-package 'color-theme-solarized)
