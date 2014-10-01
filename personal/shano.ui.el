@@ -4,7 +4,7 @@
 
 (when window-system
   (setq frame-title-format '(buffer-file-name "Emacs: %f" ("%b")))
-  (set-face-attribute 'default nil :font "Inconsolata" :height 130))
+  (set-face-attribute 'default nil :font "Inconsolata" :height 150))
 
 (setq x-resource-class "emacs-snapshot") ;; => correct hi-res icon in gnome window switcher
 
