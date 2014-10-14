@@ -71,4 +71,4 @@
 (add-hook 'c-mode-common-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
 (provide 'shano.ui)
-;;; antono.ui ends here
+;;; shano.ui ends here
