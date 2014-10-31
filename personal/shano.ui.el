@@ -42,10 +42,21 @@
 (custom-set-variables '(sr-speedbar-right-side nil))
 
 ;;
+;; Completion-UI(for automatically ctag support)
+;;
+;;(prelude-require-package 'completion-ui)
+;;(auto-completion-mode nil)
+;;(global-set-key (kbd "s-i") 'complete-etags)
+;;(custom-set-faces
+ ;;'(completion-highlight-face ((t (:background "grey" :foreground "white")))))
+
+;;
 ;; El-Screen(for tabs)
 ;;
-(prelude-require-package 'elscreen)
-(elscreen-start)
+(prelude-require-package 'escreen)
+(load "escreen")
+(setq escreen-prefix-char "\C-i")
+(global-set-key escreen-prefix-char 'escreen-prefix)
 
 ;; F9 creates a new elscreen, shift-F9 kills it
 (global-set-key (kbd "C-c t a b e") 'elscreen-create)
