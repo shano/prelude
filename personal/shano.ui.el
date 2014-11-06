@@ -81,5 +81,8 @@
 (modify-syntax-entry ?_ "w")
 (add-hook 'c-mode-common-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
+;; Set line number
+(global-linum-mode t)
+
 (provide 'shano.ui)
 ;;; shano.ui ends here
