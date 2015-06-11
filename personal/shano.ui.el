@@ -4,7 +4,7 @@
 
 (when window-system
   (setq frame-title-format '(buffer-file-name "Emacs: %f" ("%b")))
-  (set-face-attribute 'default nil :font "Inconsolata" :height 150))
+  (set-face-attribute 'default nil :font "Inconsolata" :height 110))
 
 (setq x-resource-class "emacs-snapshot") ;; => correct hi-res icon in gnome window switcher
 
@@ -66,9 +66,7 @@
 ;(global-set-key (kbd "C-c n") 'elscreen-previous)
 ;(global-set-key (kbd "C-n []") 'elscreen-next)
 
-
-(prelude-require-package 'color-theme-solarized)
-(load-theme 'solarized-dark t)
+(load-theme 'monokai t)
 
 ;; Draw line feed ^L as line!
 (prelude-require-package 'pp-c-l)
