@@ -66,12 +66,38 @@
 ;(global-set-key (kbd "C-c n") 'elscreen-previous)
 ;(global-set-key (kbd "C-n []") 'elscreen-next)
 
-(load-theme 'monokai t)
+
+;; Theme Settings
+;(load-theme 'monokai t)
+
+;; make the fringe stand out from the background
+(setq solarized-distinct-fringe-background t)
+
+;; Don't change the font for some headings and titles
+(setq solarized-use-variable-pitch nil)
+
+;; make the modeline high contrast
+(setq solarized-high-contrast-mode-line t)
+
+;; Use less bolding
+(setq solarized-use-less-bold t)
+
+;; Use more italics
+(setq solarized-use-more-italic t)
+
+;; Use less colors for indicators such as git:gutter, flycheck and similar
+(setq solarized-emphasize-indicators nil)
+
+(load-theme 'solarized-light t)
+;; End of Theme Settings
+
 
 ;; Draw line feed ^L as line!
 (prelude-require-package 'pp-c-l)
 (require 'pp-c-l)
 (pretty-control-l-mode 1)
+
+
 
 ;;
 ;; Underscore "_" is not a word character
@@ -82,5 +108,21 @@
 ;; Set line number
 (global-linum-mode t)
 
+;; Fancy diary entries
+(setq view-diary-entries-initially t
+    mark-diary-entries-in-calendar t
+    number-of-diary-entries 7)
+(add-hook 'diary-display-hook 'fancy-diary-display)
+(add-hook 'today-visible-calendar-hook 'calendar-mark-today)
+
+;; Fullscreen mode
+(defun fullscreen (&optional f)
+       (interactive)
+       (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+               '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
+       (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+               '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
+
+(fullscreen)
 (provide 'shano.ui)
 ;;; shano.ui ends here
