@@ -58,17 +58,21 @@
 (setq escreen-prefix-char "\C-i")
 (global-set-key escreen-prefix-char 'escreen-prefix)
 
+(elscreen-start)
+
 ;; F9 creates a new elscreen, shift-F9 kills it
-(global-set-key (kbd "C-c t a b e") 'elscreen-create)
+(global-set-key (kbd "C-c c c") 'elscreen-create)
 (global-set-key (kbd "C-c t a b d") 'elscreen-kill)
 
 ;; Windowskey+PgUP/PgDown switches between elscreens
-;(global-set-key (kbd "C-c n") 'elscreen-previous)
+(global-set-key (kbd "C-c c n") 'elscreen-previous)
 ;(global-set-key (kbd "C-n []") 'elscreen-next)
 
 
 ;; Theme Settings
 ;(load-theme 'monokai t)
+
+(prelude-require-package 'solarized-theme)
 
 ;; make the fringe stand out from the background
 (setq solarized-distinct-fringe-background t)
@@ -88,7 +92,7 @@
 ;; Use less colors for indicators such as git:gutter, flycheck and similar
 (setq solarized-emphasize-indicators nil)
 
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 ;; End of Theme Settings
 
 
@@ -122,6 +126,12 @@
                '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
        (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
+
+(setq org-agenda-files (append '("~/Org" "~/.emacs.d/personal" "~/Org/jstor" "~/Org/frieze" "~/Org/camuni") (file-expand-wildcards "~/Org/*/")))
+
+(setq 
+ org-default-notes-file "~/Org/home.org"
+ initial-buffer-choice  org-default-notes-file)
 
 (fullscreen)
 (provide 'shano.ui)

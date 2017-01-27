@@ -15,6 +15,7 @@
 (setq evil-insert-state-cursor '("gray" bar))
 (setq evil-motion-state-cursor '("gray" box))
 
+;; Todo re-enabled
 (require 'evil)
 (evil-mode 1)
 
